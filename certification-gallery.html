@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Gallery - Aman Joshi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-name" id="logo-name">
+                <img src="your-photo.jpg" alt="Aman Joshi" id="profile-img">
+                <h1 id="name-header">Aman Joshi</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#certifications">Certifications</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Certification Gallery Section -->
+    <section id="certification-gallery">
+        <div class="container">
+            <h2>Certification Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <h3>Automate The Boring Stuff With Python</h3>
+                    <img src="certification1-thumbnail.png" alt="Certification 1" class="thumbnail" data-pdf="certification1.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Python For Everybody</h3>
+                    <img src="certification2-thumbnail.png" alt="Certification 2" class="thumbnail" data-pdf="certification2.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Applied Data Science with Python</h3>
+                    <img src="certification3-thumbnail.png" alt="Certification 3" class="thumbnail" data-pdf="certification3.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Python for Data Science, AI & Developmen</h3>
+                    <img src="certification4-thumbnail.png" alt="Certification 4" class="thumbnail" data-pdf="certification4.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Tools for Data Science</h3>
+                    <img src="certification5-thumbnail.png" alt="Certification 5" class="thumbnail" data-pdf="certification5.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</h3>
+                    <img src="certification6-thumbnail.png" alt="Certification 6" class="thumbnail" data-pdf="certification6.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Structuring Machine Learning Projects</h3>
+                    <img src="certification7-thumbnail.png" alt="Certification 7" class="thumbnail" data-pdf="certification7.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Neural Networks and Deep Learning</h3>
+                    <img src="certification8-thumbnail.png" alt="Certification 8" class="thumbnail" data-pdf="certification8.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>AWS Academy Graduate - AWS Academy Machine Learning Foundations</h3>
+                    <img src="certification9-thumbnail.png" alt="Certification 9" class="thumbnail" data-pdf="certification9.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>AWS Academy Graduate - AWS Academy Cloud Foundations</h3>
+                    <img src="certification10-thumbnail.png" alt="Certification 10" class="thumbnail" data-pdf="certification10.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Foundations: Data, Data, Everywhere</h3>
+                    <img src="certification11-thumbnail.png" alt="Certification 11" class="thumbnail" data-pdf="certification11.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Search Engine Optimization (SEO)</h3>
+                    <img src="certification12-thumbnail.png" alt="Certification 12" class="thumbnail" data-pdf="certification12.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>iOS App Development Basics</h3>
+                    <img src="certification13-thumbnail.png" alt="Certification 13" class="thumbnail" data-pdf="certification13.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>iOS App Development Basics</h3>
+                    <img src="certification14-thumbnail.png" alt="Certification 14" class="thumbnail" data-pdf="certification14.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>iOS & Swift - The complete iOS App Development Bootcamp</h3>
+                    <img src="certification15-thumbnail.png" alt="Certification 15" class="thumbnail" data-pdf="certification15.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Data Science Methodology</h3>
+                    <img src="certification16-thumbnail.png" alt="Certification 16" class="thumbnail" data-pdf="certification16.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>What is Data Science?</h3>
+                    <img src="certification17-thumbnail.png" alt="Certification 17" class="thumbnail" data-pdf="certification17.pdf">
+                </div>
+                <div class="gallery-item">
+                    <h3>Customer Service Using AI and Machine Learning (2020)</h3>
+                    <img src="certification03-thumbnail.png" alt="Certification 18" class="thumbnail" data-pdf="certification03.pdf">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for PDF viewing -->
+    <div id="pdf-modal" class="modal">
+        <span class="close">&times;</span>
+        <embed id="pdf-viewer" src="" width="100%" height="100%">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById("pdf-modal");
+        const pdfViewer = document.getElementById("pdf-viewer");
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const closeModal = document.querySelector(".close");
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener("click", function() {
+                pdfViewer.src = this.dataset.pdf;
+                modal.style.display = "block";
+            });
+        });
+
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

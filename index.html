@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Joshi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-name" id="logo-name">
+                <img src="your-photo.jpg" alt="Aman Joshi" id="profile-img-header">
+                <h1 id="name-header">Aman Joshi</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container home-content">
+            <div class="text-content">
+                <h2>Welcome to My Portfolio</h2>
+                <p>I am a Computer Science professional with a strong focus on AI and Big Data...</p>
+            </div>
+            <div class="image-content">
+                <img src="your-photo.jpg" alt="Aman Joshi" id="profile-img-center">
+            </div>
+        </div>
+    </section>    
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="content-box">
+                <p>Hello! I'm Aman Joshi, a dedicated Computer Science professional with a strong foundation in AI, Big Data, and Software Development. With a Postgraduate Certificate in Big Data Solution Architecture from Conestoga College and a previous Postgraduate certificate in Artificial Intelligence from Georgian College, I bring a blend of technical expertise and innovative thinking to the table.</p>
+                <p>My experience spans across roles such as an AI Developer at Bayshore Healthcare and a Junior Android Developer at Latitude Technolabs, where I developed critical applications and resolved complex technical challenges. I'm skilled in Python, SQL, PySpark, Tableau, Power BI, and more, with a passion for leveraging analytics to drive business strategy and operational efficiency.</p>
+                <p>I'm constantly exploring emerging technologies and trends, and I love sharing my insights through my blog on Medium. When I'm not coding or analyzing data, you can find me contributing to open-source projects on GitHub.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="content-box">
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML & CSS</li>
+                    <li>SQL</li>
+                    <li>Big Data Technologies</li>
+                    <li>Machine Learning</li>
+                    <li>Data Visualization (Tableau, Power BI)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="content-box">
+                <h3>Projects</h3>
+                <p>Below is the link provided for the projects</p>
+                <a href="https://github.com/icyboguyaman?tab=repositories" target="_blank">View My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="content-box">
+                <h3>Certification Gallery</h3>
+                <p>Below is the certificates gallery if interested.</p>
+                <a href="certification-gallery.html" target="_blank">View Certification Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <div class="content-box">
+                <h3>My Blogs on Medium</h3>
+                <p>Read My Blogs with the below link</p>
+                <a href="https://medium.com/@amanjoshi1399" target="_blank">Click here to read blogs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="content-box">
+                <form action="submit_form.php" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:joshiaman.work@gmail.com">joshiaman.work@gmail.com</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/amanjoshi1399/">Aman Joshi</a></p>
+                    <p>Medium: <a href="https://medium.com/@amanjoshi1399" target="_blank">Blog on Medium</a></p>
+                    <p>GitHub: <a href="https://github.com/icyboguyaman" target="_blank">GitHub Profile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
+            <p>Connect with me on <a href="https://medium.com/@amanjoshi1399">Medium</a> and <a href="https://github.com/icyboguyaman">GitHub</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const profileImgHeader = document.querySelector('#profile-img-header');
+            const nameHeader = document.querySelector('#name-header');
+            const profileImgCenter = document.querySelector('#profile-img-center');
+            const logoName = document.querySelector('#logo-name');
+
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                logoName.style.display = 'flex';
+            } else {
+                header.classList.remove('scrolled');
+                logoName.style.display = 'none';
+            }
+        });
+
+        // To Ensure the page loads at the top
+        window.onload = function() {
+            if (window.location.hash) {
+                window.location.hash = '';
+            }
+        };
+    </script>
+</body>
+</html>
