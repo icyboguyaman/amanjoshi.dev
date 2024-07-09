@@ -57,9 +57,22 @@ header h1 {
 /* Profile Image in the Center */
 #profile-img-center {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 320px;
+    height: 320px;
     margin-left: 2em;
+    transition: transform 0.3s;
+    border: 5px solid #00ffff; /* Neon border color */
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff; /* Neon glow effect */
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff; /* Initial state */
+    }
+    50% {
+        box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff; /* Enlarged state */
+    }
 }
 
 /* Navigation */
@@ -114,9 +127,6 @@ nav ul li a {
     border: 5px solid #00ffff; /* Neon border color */
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff; /* Neon glow effect */
 }
-
-
-
 
 /* About Section */
 #about {
@@ -386,17 +396,62 @@ html {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Add this CSS for the download button */
-.btn {
-    display: inline-block;
-    padding: 0.5em 2em;
-    background: #00bcd4; /* Cyan color */
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #home .text-content, #home .image-content {
+        margin: 1em 0;
+    }
+
+    #about, #skills, #projects, #certifications, #blog, #contact {
+        padding: 2em 0;
+    }
+
+    #profile-img-header {
+        width: 75px;
+        height: 75px;
+    }
+
+    #profile-img-center {
+        width: 250px;
+        height: 250px;
+    }
 }
 
-.btn:hover {
-    background: #0097a7; /* Darker cyan color for hover */
+/* Button Styles */
+.btn-download {
+    display: inline-block;
+    padding: 0.5em 2em;
+    margin-top: 1em;
+    background: #00ffff; /* Neon blue color for button */
+    color: #000; /* Black text color */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.btn-download:hover {
+    background: #0099cc; /* Slightly darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
