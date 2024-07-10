@@ -1,578 +1,244 @@
-/* Reset some basic elements */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
-body {
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-/* Container */
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #333;
-    color: #fff;
-    padding: 1em 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s;
-}
-
-header h1 {
-    font-size: 2em;
-    transition: font-size 0.3s, transform 0.3s;
-}
-
-/* Container for logo and name */
-.logo-name {
-    display: none;
-    align-items: center;
-}
-
-/* Profile Image */
-#profile-img-header {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 1em;
-    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, transform 0.3s;
-}
-
-/* Profile Image in the Center */
-#profile-img-center {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin-left: 2em;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Home Section */
-#home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left; /* Align text to the left */
-    padding: 5em 0;
-    min-height: 100vh;
-}
-
-#home .home-content {
-    display: flex;
-    align-items: center;
-}
-
-#home .text-content {
-    flex: 1;
-    margin-right: 2em; /* Add some space between text and image */
-}
-
-#home .image-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#profile-img-center {
-    border-radius: 50%;
-    width: 320px; 
-    height: 320px; 
-    margin: 1em 0;
-    transition: transform 0.3s;
-    border: 5px solid #00ffff; /* Neon border color */
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff; /* Neon glow effect */
-}
-
-/* About Section */
-#about {
-    background: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-    padding: 2em 0;
-}
-
-#about .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-}
-
-/* Skills Section */
-#skills {
-    background: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-    padding: 5em 0;
-}
-
-#skills .content-box {
-    background: #333;
-    padding: 2em;
-    border-radius: 5px;
-}
-
-/* Projects Section */
-#projects {
-    padding: 2em 0;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-}
-
-#projects .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-}
-
-#projects .content-box a {
-    color: #00ffff; /* Neon white color for links */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-#projects .content-box a:hover {
-    color: #ffffff; /* White color on hover */
-}
-
-/* Certifications Section */
-#certifications {
-    padding: 2em 0;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-}
-
-#certifications .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-}
-
-#certifications .content-box a {
-    color: #00ffff; /* Neon white color for links */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-#certifications .content-box a:hover {
-    color: #ffffff; /* White color on hover */
-}
-
-/* Blog Section */
-#blog {
-    padding: 2em 0;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-}
-
-#blog .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-}
-
-#blog .content-box a {
-    color: #00ffff; /* Neon white color for links */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-#blog .content-box a:hover {
-    color: #ffffff; /* White color on hover */
-}
-
-/* Contact Section */
-#contact {
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-    padding: 2em 0;
-    text-align: center;
-}
-
-#contact .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-}
-
-#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1em;
-    background: #333;
-    border-radius: 5px;
-}
-
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin: 0.5em 0;
-    background: #444; /* Change input background to blend in */
-    color: #fff; /* Change input text color to white */
-    border: 1px solid #555; /* Add a border to inputs */
-    border-radius: 5px;
-}
-
-#contact form input::placeholder,
-#contact form textarea::placeholder {
-    color: #bbb; /* Change placeholder text color */
-}
-
-#contact form button {
-    padding: 0.5em 2em;
-    background: #ff9800;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-#contact form button:hover {
-    background: #e68900; /* Change button background on hover */
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
-
-footer a {
-    color: #00ffff; /* Neon white color for footer links */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #ffffff; /* White color on hover */
-}
-
-/* Certification Gallery Section */
-#certification-gallery .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#certification-gallery .gallery-item {
-    margin: 1em;
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-    width: calc(33% - 2em);
-    box-sizing: border-box;
-    text-align: center;
-}
-
-#certification-gallery .gallery-item h3 {
-    margin-bottom: 0.5em;
-}
-
-#certification-gallery .gallery-item img {
-    width: 100px; /* Fixed width for thumbnails */
-    height: auto;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-#certification-gallery .gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal .close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: #fff;
-    font-size: 35px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.modal .close:hover,
-.modal .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal embed {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 1000px;
-    height: 80%;
-}
-
-/* Contact and About Section Links */
-#about ul a,
-.contact-info a {
-    color: #ff9800;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-#about ul a:hover,
-.contact-info a:hover {
-    color: #e68900;
-}
-html {
-    scroll-behavior: smooth;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Apply animation to sections */
-#home, #about, #skills, #projects, #certifications, #blog, #contact {
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 0.5em 0;
-    }
-
-    #home {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #home .text-content, #home .image-content {
-        margin: 1em 0;
-    }
-
-    #about, #skills, #projects, #certifications, #blog, #contact {
-        padding: 2em 0;
-    }
-
-    #profile-img-header {
-        width: 75px;
-        height: 75px;
-    }
-
-    #profile-img-center {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-/* Button Styles */
-.btn-download {
-    display: inline-block;
-    padding: 0.5em 2em;
-    margin-top: 1em;
-    background: #00ffff; /* Neon blue color for button */
-    color: #000; /* Black text color */
-    text-decoration: none; /* Remove underline from link */
-    border-radius: 5px; /* Rounded corners */
-    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
-}
-
-.btn-download:hover {
-    background: #0099cc; /* Slightly darker blue on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
-}
-
-/* Experience Section */
-#experience {
-    background: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-    padding: 2em 0;
-}
-
-#experience .timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1em;
-}
-
-#experience .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #007bff;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
-#experience .timeline-item {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
-
-#experience .timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: #fff;
-    border: 4px solid #007bff;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-#experience .timeline-item .timeline-date {
-    padding: 0.5em 0;
-    position: absolute;
-    width: 150px; /* Adjust width as needed */
-    top: 20px;
-    font-size: 0.9em; /* Adjust font size as needed */
-    background-color: #007bff; /* Background color for the date */
-    color: #fff; /* Text color for the date */
-    border-radius: 5px; /* Rounded corners for the date */
-    padding: 5px; /* Padding for the date */
-}
-
-#experience .timeline-item:nth-child(odd) {
-    left: 0;
-}
-
-#experience .timeline-item:nth-child(even) {
-    left: 50%;
-}
-
-#experience .timeline-item:nth-child(even)::after {
-    left: -16px;
-}
-
-#experience .timeline-item:nth-child(odd) .timeline-date {
-    left: 400px; /* Position to the left for odd items */
-    text-align: center;
-}
-
-#experience .timeline-item:nth-child(even) .timeline-date {
-    left: -43%; /* Position to the right for even items */
-    text-align: center;
-}
-
-/* Social Media Icons */
-.social-icons {
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-}
-
-.social-icons a {
-    margin: 0 0.5em;
-}
-
-.social-icons img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-    transform: scale(1.1);
-}
-
-/* Latest Blogs Section */
-#latest-blogs {
-    padding: 2em 0;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
-}
-
-.blog-post {
-    background: #333;
-    color: #fff;
-    padding: 1em;
-    margin: 1em 0;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-}
-
-.blog-post img.blog-thumbnail {
-    max-width: 100px; /* Adjust the size of the thumbnail */
-    margin-right: 1em;
-    border-radius: 5px;
-}
-
-.blog-post a {
-    color: #00ffff; /* Neon white color for links */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.blog-post a:hover {
-    color: #ffffff; /* White color on hover */
-}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Joshi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-name" id="logo-name">
+                <img src="your-photo.jpg" alt="Aman Joshi" id="profile-img-header">
+                <h1 id="name-header">Aman Joshi</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container home-content">
+            <div class="text-content">
+                <h2>Welcome to My Portfolio</h2>
+                <p>I am a dedicated Computer Science professional with a passion for AI and Big Data. My expertise spans across various domains including machine learning, data analysis, and software development. I thrive on solving complex problems and leveraging cutting-edge technologies to drive innovation and efficiency. Whether it's building intelligent algorithms, analyzing vast datasets, or developing robust applications, I am always eager to take on new challenges and contribute to impactful projects. Explore my portfolio to learn more about my work, skills, and experiences.</p>
+                <a href="JoshiAman_resume.pdf" class="btn-download" download>Download My Resume</a>
+            </div>
+            <div class="image-content">
+                <img src="your-photo.jpg" alt="Aman Joshi" id="profile-img-center">
+            </div>
+            <div class="social-icons">
+                <a href="https://medium.com/@amanjoshi1399" target="_blank"><img src="medium-icon.png" alt="Medium"></a>
+                <a href="https://www.linkedin.com/in/amanjoshi1399/" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://github.com/icyboguyaman" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2023 - Present</div>
+                    <div class="timeline-content">
+                        <h3>HexVr [Startup]</h3>
+                        <p>Manage the organization's data assets and oversee data quality, data architecture, and data integration...</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Nov 2020 - Feb 2021</div>
+                    <div class="timeline-content">
+                        <h3>Kaizen Python Internship</h3>
+                        <p>Written reusable, testable, and efficient code in Python that meets the project needs...</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2020 - June 2020</div>
+                    <div class="timeline-content">
+                        <h3>Cipher Schools Trainee (ML)</h3>
+                        <p>Involved in duties such as data preparation, model building and training, assessment, and optimization...</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2019 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Aashayein a ray of hope (NGO) (Technical Manager)</h3>
+                        <p>Managing the IT Infrastructure, developing and maintaining the technology, policies, and features, and provided technical support to the staff...</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2016 - Aug 2019</div>
+                    <div class="timeline-content">
+                        <h3>Aashayein a ray of hope (NGO) (Event Coordinator)</h3>
+                        <p>Involved and conducted event planning in collaboration with the community...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="content-box">
+                <p>Hello! I'm Aman Joshi, a dedicated Computer Science professional with a strong foundation in AI, Big Data, and Software Development. With a Postgraduate Certificate in Big Data Solution Architecture from Conestoga College and a previous Postgraduate certificate in Artificial Intelligence from Georgian College, I bring a blend of technical expertise and innovative thinking to the table.</p>
+                <p>My experience spans across roles such as a Data Analyst Intern at Scotiabank, where I developed critical applications and resolved complex technical challenges. I'm skilled in Python, SQL, PySpark, Tableau, Power BI, and more, with a passion for leveraging analytics to drive business strategy and operational efficiency.</p>
+                <p>I'm constantly exploring emerging technologies and trends, and I love sharing my insights through my blog on Medium. When I'm not coding or analyzing data, you can find me contributing to open-source projects on GitHub. Additionally, I have a keen interest in Astrophysics and enjoy exploring the mysteries of the universe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="content-box">
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML & CSS</li>
+                    <li>SQL</li>
+                    <li>Big Data Technologies</li>
+                    <li>Machine Learning</li>
+                    <li>Data Visualization (Tableau, Power BI)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="content-box">
+                <h3>Projects</h3>
+                <p>Below is the link provided for the projects</p>
+                <a href="https://github.com/icyboguyaman?tab=repositories" target="_blank">View My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="content-box">
+                <h3>Certification Gallery</h3>
+                <p>Below is the certificates gallery if interested.</p>
+                <a href="certification-gallery.html" target="_blank">View Certification Gallery</a>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Blogs Section -->
+    <section id="latest-blogs">
+        <div class="container">
+            <h2>Latest Blogs</h2>
+            <div id="medium-blogs"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="content-box">
+                <form action="submit_form.php" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:joshiaman.work@gmail.com">joshiaman.work@gmail.com</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/amanjoshi1399/">Aman Joshi</a></p>
+                    <p>Medium: <a href="https://medium.com/@amanjoshi1399" target="_blank">Blog on Medium</a></p>
+                    <p>GitHub: <a href="https://github.com/icyboguyaman" target="_blank">GitHub Profile</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer Section -->   
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
+            <p>Connect with me on <a href="https://medium.com/@amanjoshi1399">Medium</a> and <a href="https://github.com/icyboguyaman">GitHub</a>.</p>
+        </div>
+    </footer>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
+            <p>Connect with me on <a href="https://medium.com/@amanjoshi1399">Medium</a> and <a href="https://github.com/icyboguyaman">GitHub</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fetch Medium posts
+        document.addEventListener("DOMContentLoaded", function() {
+            const mediumURL = 'https://medium.com/feed/@amanjoshi1399';
+
+            fetch('https://api.rss2json.com/v1/api.json?rss_url=' + mediumURL)
+                .then(response => response.json())
+                .then(data => {
+                    let output = '';
+                    data.items.slice(0, 5).forEach(item => {
+                        // Extract thumbnail from content if not provided
+                        const parser = new DOMParser();
+                        const content = parser.parseFromString(item.content, 'text/html');
+                        const img = content.querySelector('img');
+                        const thumbnail = img ? img.src : '';
+
+                        output += `
+                            <div class="blog-post">
+                                <a href="${item.link}" target="_blank">
+                                    ${thumbnail ? `<img src="${thumbnail}" alt="${item.title}" class="blog-thumbnail">` : ''}
+                                    <h3>${item.title}</h3>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    document.getElementById('medium-blogs').innerHTML = output;
+                });
+        });
+
+        // Scroll event for header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const profileImgHeader = document.querySelector('#profile-img-header');
+            const nameHeader = document.querySelector('#name-header');
+            const profileImgCenter = document.querySelector('#profile-img-center');
+            const logoName = document.querySelector('#logo-name');
+
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                logoName.style.display = 'flex';
+            } else {
+                header.classList.remove('scrolled');
+                logoName.style.display = 'none';
+            }
+        });
+
+        // To Ensure the page loads at the top
+        window.onload = function() {
+            if (window.location.hash) {
+                window.location.hash = '';
+            }
+        };
+    </script>
+</body>
+</html>
