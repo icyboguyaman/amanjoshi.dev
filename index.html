@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aman Joshi - Portfolio</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Joshi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
     <!-- Header -->
     <header id="main-header">
@@ -38,8 +38,14 @@
             <div class="image-content">
                 <img src="your-photo.jpg" alt="Aman Joshi" id="profile-img-center">
             </div>
+            <div class="social-icons">
+                <a href="https://medium.com/@amanjoshi1399" target="_blank"><img src="medium-icon.png" alt="Medium"></a>
+                <a href="https://www.linkedin.com/in/amanjoshi1399/" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://github.com/icyboguyaman" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
         </div>
     </section>
+
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
@@ -137,16 +143,11 @@
             </div>
         </div>
     </section>
-
-    <!-- Blog Section -->
-    <section id="blog">
+    <!-- Latest Blogs Section -->
+    <section id="latest-blogs">
         <div class="container">
-            <h2>Blog</h2>
-            <div class="content-box">
-                <h3>My Blogs on Medium</h3>
-                <p>Read My Blogs with the below link</p>
-                <a href="https://medium.com/@amanjoshi1399" target="_blank">Click here to read blogs</a>
-            </div>
+            <h2>Latest Blogs</h2>
+            <div id="medium-blogs"></div>
         </div>
     </section>
 
@@ -171,6 +172,14 @@
         </div>
     </section>
 
+     <!-- Footer Section -->   
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
+            <p>Connect with me on <a href="https://medium.com/@amanjoshi1399">Medium</a> and <a href="https://github.com/icyboguyaman">GitHub</a>.</p>
+        </div>
+    </footer>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
@@ -179,6 +188,35 @@
     </footer>
 
     <script>
+        // Fetch Medium posts
+        document.addEventListener("DOMContentLoaded", function() {
+            const mediumURL = 'https://medium.com/feed/@amanjoshi1399';
+
+            fetch('https://api.rss2json.com/v1/api.json?rss_url=' + mediumURL)
+                .then(response => response.json())
+                .then(data => {
+                    let output = '';
+                    data.items.slice(0, 5).forEach(item => {
+                        // Extract thumbnail from content if not provided
+                        const parser = new DOMParser();
+                        const content = parser.parseFromString(item.content, 'text/html');
+                        const img = content.querySelector('img');
+                        const thumbnail = img ? img.src : '';
+
+                        output += `
+                            <div class="blog-post">
+                                <a href="${item.link}" target="_blank">
+                                    ${thumbnail ? `<img src="${thumbnail}" alt="${item.title}" class="blog-thumbnail">` : ''}
+                                    <h3>${item.title}</h3>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    document.getElementById('medium-blogs').innerHTML = output;
+                });
+        });
+
+        // Scroll event for header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             const profileImgHeader = document.querySelector('#profile-img-header');
