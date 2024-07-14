@@ -550,29 +550,45 @@ html {
     color: #fff; /* Set text color to white */
 }
 
-.blog-post {
+.blog-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.blog-card {
     background: #333;
     color: #fff;
     padding: 1em;
-    margin: 1em 0;
+    margin: 1em;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
+    width: calc(33% - 2em);
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
-.blog-post img.blog-thumbnail {
-    max-width: 100px; /* Adjust the size of the thumbnail */
-    margin-right: 1em;
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    width: 100%;
+    height: auto;
     border-radius: 5px;
 }
 
-.blog-post a {
+.blog-card h3 {
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+.blog-card a {
     color: #00ffff; /* Neon white color for links */
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.blog-post a:hover {
+.blog-card a:hover {
     color: #ffffff; /* White color on hover */
 }
-

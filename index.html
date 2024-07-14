@@ -143,11 +143,12 @@
             </div>
         </div>
     </section>
+
     <!-- Latest Blogs Section -->
     <section id="latest-blogs">
         <div class="container">
             <h2>Latest Blogs</h2>
-            <div id="medium-blogs"></div>
+            <div class="blog-gallery" id="medium-blogs"></div>
         </div>
     </section>
 
@@ -172,7 +173,7 @@
         </div>
     </section>
 
-     <!-- Footer Section -->   
+    <!-- Footer Section -->   
     <footer>
         <div class="container">
             <p>&copy; 2024 Aman Joshi. All rights reserved.</p>
@@ -180,8 +181,8 @@
         </div>
     </footer>
 
+    <!-- JavaScript for fetching Medium posts -->
     <script>
-        // Fetch Medium posts
         document.addEventListener("DOMContentLoaded", function() {
             const mediumURL = 'https://medium.com/feed/@amanjoshi1399';
 
@@ -197,7 +198,7 @@
                         const thumbnail = img ? img.src : '';
 
                         output += `
-                            <div class="blog-post">
+                            <div class="blog-card">
                                 <a href="${item.link}" target="_blank">
                                     ${thumbnail ? `<img src="${thumbnail}" alt="${item.title}" class="blog-thumbnail">` : ''}
                                     <h3>${item.title}</h3>
