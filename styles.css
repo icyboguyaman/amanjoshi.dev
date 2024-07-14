@@ -141,51 +141,66 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* Projects Section */
-#projects {
+/* Projects and Certifications Section */
+#projects-certifications {
     padding: 2em 0;
     background-color: #000; /* Set background to black */
     color: #fff; /* Set text color to white */
 }
 
-#projects .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
+.cards {
+    display: flex;
+    justify-content: space-between; /* Ensure cards are side by side with space between them */
+    gap: 1em; /* Add gap between cards */
 }
 
-#projects .content-box a {
+.card {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    width: 48%; /* Set the width of each card to 48% to fit two cards side by side */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.card p {
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+.card a {
     color: #00ffff; /* Neon white color for links */
     text-decoration: none;
     transition: color 0.3s;
 }
 
-#projects .content-box a:hover {
+.card a:hover {
     color: #ffffff; /* White color on hover */
 }
 
-/* Certifications Section */
-#certifications {
-    padding: 2em 0;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+    }
 }
 
-#certifications .content-box {
-    background: #333;
-    padding: 1em;
-    border-radius: 5px;
-}
 
-#certifications .content-box a {
-    color: #00ffff; /* Neon white color for links */
-    text-decoration: none;
-    transition: color 0.3s;
-}
 
-#certifications .content-box a:hover {
-    color: #ffffff; /* White color on hover */
-}
 
 /* Blog Section */
 #blog {
